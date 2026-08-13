@@ -125,7 +125,7 @@ export default function Register() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-stone bg-paper focus:outline-none focus:ring-2 focus:ring-verdant/40 focus:border-verdant transition-all"
-                  placeholder="Anupam"
+                  placeholder="Utkarsh"
                 />
               </div>
 
