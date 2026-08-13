@@ -27,7 +27,7 @@ const HERO_SLIDES = [
     subtitle: "Auren tracks live inventory on every product, so what you see is what's actually on the shelf.",
     cta: 'Shop the catalog',
     to: '/catalog',
-    theme: 'from-ink via-ink to-ink-light',
+    theme: 'from-[#05070b] via-[#101827] to-[#172033]',
     icon: ShoppingBag,
   },
   {
@@ -37,7 +37,7 @@ const HERO_SLIDES = [
     subtitle: 'Our biggest markdowns of the month, across every category.',
     cta: 'Shop the sale',
     to: '/catalog',
-    theme: 'from-ember to-[#7a4a12]',
+    theme: 'from-fuchsia-700 via-purple-700 to-indigo-700',
     icon: Percent,
   },
   {
@@ -47,7 +47,7 @@ const HERO_SLIDES = [
     subtitle: "The pieces our team can't stop recommending.",
     cta: 'Explore picks',
     to: '/catalog',
-    theme: 'from-verdant to-verdant-light',
+    theme: 'from-cyan-700 via-blue-700 to-indigo-700',
     icon: Gem,
   },
   {
@@ -57,7 +57,7 @@ const HERO_SLIDES = [
     subtitle: 'Applied instantly at checkout — no minimum order.',
     cta: 'Start shopping',
     to: '/catalog',
-    theme: 'from-ink via-[#123a38] to-verdant',
+    theme: 'from-[#071018] via-[#12304a] to-cyan-700',
     icon: Gift,
   },
   {
@@ -67,7 +67,7 @@ const HERO_SLIDES = [
     subtitle: 'Real-time stock tracking and quick dispatch on every order.',
     cta: "See what's new",
     to: '/catalog',
-    theme: 'from-ink-light to-ink',
+    theme: 'from-[#172033] to-[#05070b]',
     icon: Truck,
   },
 ];
@@ -81,10 +81,10 @@ const PRICE_BUCKETS = [
 ];
 
 const CURATED_QUICK_LINKS = [
-  { id: 'new', label: 'New', to: '/catalog', icon: Sparkles, tone: 'bg-ink' },
-  { id: 'bestsellers', label: 'Bestsellers', to: '/catalog', icon: Star, tone: 'bg-verdant' },
-  { id: 'offers', label: 'Offers', to: '/catalog', icon: Percent, tone: 'bg-ember' },
-  { id: 'trending', label: 'Trending', to: '/catalog', icon: TrendingUp, tone: 'bg-ink-light' },
+  { id: 'new', label: 'New', to: '/catalog', icon: Sparkles, tone: 'bg-[#0b1018]' },
+  { id: 'bestsellers', label: 'Bestsellers', to: '/catalog', icon: Star, tone: 'bg-cyan-500' },
+  { id: 'offers', label: 'Offers', to: '/catalog', icon: Percent, tone: 'bg-fuchsia-500' },
+  { id: 'trending', label: 'Trending', to: '/catalog', icon: TrendingUp, tone: 'bg-[#0b1018]-light' },
 ];
 
 const RECENTLY_VIEWED_KEY = 'auren_recently_viewed';
@@ -150,7 +150,7 @@ function HeroCarousel() {
     <section
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      className="relative h-[480px] sm:h-[640px] overflow-hidden"
+      className="relative min-h-[560px] sm:min-h-[700px] overflow-hidden border-b border-white/10"
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -189,13 +189,13 @@ function HeroCarousel() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.4 }}
-            className="absolute top-5 right-5 sm:top-8 sm:right-8 z-10 font-mono text-[10px] sm:text-xs text-paper/50 tracking-widest"
+            className="absolute top-5 right-5 sm:top-8 sm:right-8 z-10 font-mono text-[10px] sm:text-xs text-white/50 tracking-widest"
           >
             {String(index + 1).padStart(2, '0')} / {String(HERO_SLIDES.length).padStart(2, '0')}
           </motion.div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full relative">
-            <motion.div style={{ y: parallaxY }} className="grid md:grid-cols-2 gap-8 items-center h-full">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 h-full relative">
+            <motion.div style={{ y: parallaxY }} className="grid md:grid-cols-[1.15fr_.85fr] gap-10 lg:gap-16 items-center min-h-[560px] sm:min-h-[700px]">
               <div>
                 <motion.div
                   initial={{ opacity: 0, x: -16 }}
@@ -209,14 +209,14 @@ function HeroCarousel() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="h-px bg-paper/50"
                   />
-                  <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-paper/70">{slide.eyebrow}</p>
+                  <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-white/70">{slide.eyebrow}</p>
                 </motion.div>
 
                 <motion.h1
                   variants={headlineContainerVariants}
                   initial="hidden"
                   animate="visible"
-                  className="font-display text-3xl sm:text-6xl md:text-6xl leading-[1.1] sm:leading-[1.05] max-w-lg text-paper"
+                  className="font-sans font-black text-4xl sm:text-6xl lg:text-7xl leading-[.98] max-w-3xl text-white tracking-[-0.04em]"
                 >
                   {slide.title.split(' ').map((word, wi) => (
                     <span key={wi} className="inline-block overflow-hidden pb-1 mr-[0.28em] align-top">
@@ -231,7 +231,7 @@ function HeroCarousel() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-3 sm:mt-6 text-sm sm:text-lg text-paper/70 max-w-[85%] sm:max-w-md"
+                  className="mt-3 sm:mt-6 text-sm sm:text-lg text-white/70 max-w-[85%] sm:max-w-md"
                 >
                   {slide.subtitle}
                 </motion.p>
@@ -245,7 +245,7 @@ function HeroCarousel() {
                     to={slide.to}
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.97 }}
-                    className="group relative inline-block mt-5 sm:mt-8 px-6 sm:px-8 py-2.5 sm:py-3 bg-paper text-ink rounded-full text-xs sm:text-sm font-sans uppercase tracking-widest w-fit overflow-hidden"
+                    className="group relative inline-block mt-5 sm:mt-8 px-6 sm:px-8 py-2.5 sm:py-3 bg-paper text-white rounded-full text-xs sm:text-sm font-sans uppercase tracking-widest w-fit overflow-hidden"
                   >
                     <span className="relative z-10">{slide.cta}</span>
                     <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
@@ -260,13 +260,13 @@ function HeroCarousel() {
                 >
                   <motion.span
                     variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-                    className="text-[11px] font-mono text-paper/60 bg-paper/10 px-3 py-1.5 rounded-full"
+                    className="text-[11px] font-mono text-white/60 bg-white/[0.07] px-3 py-1.5 rounded-full"
                   >
                     ★ 4.8 rated
                   </motion.span>
                   <motion.span
                     variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-                    className="text-[11px] font-mono text-paper/60 bg-paper/10 px-3 py-1.5 rounded-full"
+                    className="text-[11px] font-mono text-white/60 bg-white/[0.07] px-3 py-1.5 rounded-full"
                   >
                     Free shipping ₹999+
                   </motion.span>
@@ -277,30 +277,30 @@ function HeroCarousel() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-                  className="absolute w-72 h-72 rounded-full border border-paper/15"
+                  className="absolute w-72 h-72 rounded-full border border-white/10"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 55, repeat: Infinity, ease: 'linear' }}
-                  className="absolute w-56 h-56 rounded-full border border-dashed border-paper/10"
+                  className="absolute w-56 h-56 rounded-full border border-dashed border-white/10"
                 />
                 <motion.div
                   initial={{ scale: 0.4, opacity: 0, rotate: -20 }}
                   animate={{ scale: 1, opacity: 1, rotate: 0 }}
                   transition={{ duration: 0.8, delay: 0.35, ease: [0.34, 1.56, 0.64, 1] }}
-                  className="w-40 h-40 rounded-full bg-paper/10 backdrop-blur-sm flex items-center justify-center relative"
+                  className="w-40 h-40 rounded-full bg-white/[0.07] backdrop-blur-sm flex items-center justify-center relative"
                 >
                   <motion.div
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                    className="absolute inset-0 rounded-full bg-paper/10"
+                    className="absolute inset-0 rounded-full bg-white/[0.07]"
                   />
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                     className="relative z-10"
                   >
-                    <Icon size={56} strokeWidth={1} className="text-paper/90" />
+                    <Icon size={56} strokeWidth={1} className="text-white/90" />
                   </motion.div>
                 </motion.div>
               </div>
@@ -313,14 +313,14 @@ function HeroCarousel() {
       <button
         onClick={prev}
         aria-label="Previous slide"
-        className="hidden sm:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-paper/15 hover:bg-paper/25 backdrop-blur-sm items-center justify-center text-paper transition-colors"
+        className="hidden sm:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-sm items-center justify-center text-white transition-colors"
       >
         <ChevronLeft size={18} strokeWidth={2} />
       </button>
       <button
         onClick={next}
         aria-label="Next slide"
-        className="hidden sm:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-paper/15 hover:bg-paper/25 backdrop-blur-sm items-center justify-center text-paper transition-colors"
+        className="hidden sm:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-sm items-center justify-center text-white transition-colors"
       >
         <ChevronRight size={18} strokeWidth={2} />
       </button>
@@ -331,7 +331,7 @@ function HeroCarousel() {
             key={s.id}
             onClick={() => setIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className="relative h-1 flex-1 rounded-full bg-paper/25 overflow-hidden"
+            className="relative h-1 flex-1 rounded-full bg-white/[0.14] overflow-hidden"
           >
             {i < index && <div className="absolute inset-0 bg-paper/80" />}
             {i === index && !paused && (
@@ -356,9 +356,9 @@ function SkeletonRow({ count = 4 }) {
     <div className="flex gap-6 overflow-hidden">
       {Array.from({ length: count }).map((_, i) => (
         <div key={i} className="w-44 sm:w-56 flex-shrink-0 animate-pulse">
-          <div className="aspect-square rounded-md bg-stone" />
-          <div className="mt-4 h-3.5 rounded-full bg-stone w-4/5" />
-          <div className="mt-2.5 h-3.5 rounded-full bg-stone w-2/5" />
+          <div className="aspect-square rounded-2xl bg-[#151a24]" />
+          <div className="mt-4 h-3.5 rounded-full bg-[#151a24] w-4/5" />
+          <div className="mt-2.5 h-3.5 rounded-full bg-[#151a24] w-2/5" />
         </div>
       ))}
     </div>
@@ -369,7 +369,7 @@ function SkeletonTiles({ count = 4 }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
       {Array.from({ length: count }).map((_, i) => (
-        <div key={i} className="aspect-square rounded-md bg-stone animate-pulse" />
+        <div key={i} className="aspect-square rounded-2xl bg-[#151a24] animate-pulse" />
       ))}
     </div>
   );
@@ -380,8 +380,8 @@ function SkeletonCircles({ count = 6 }) {
     <div className="flex gap-6 sm:gap-8 overflow-hidden">
       {Array.from({ length: count }).map((_, i) => (
         <div key={i} className="flex flex-col items-center gap-2.5 flex-shrink-0 animate-pulse">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-stone" />
-          <div className="h-3 w-12 bg-stone rounded-full" />
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#151a24]" />
+          <div className="h-3 w-12 bg-[#151a24] rounded-full" />
         </div>
       ))}
     </div>
@@ -390,8 +390,8 @@ function SkeletonCircles({ count = 6 }) {
 
 function SectionSkeleton({ tiles = false, count = 4 }) {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
-      <div className="h-7 w-48 bg-stone rounded-full animate-pulse mb-8" />
+    <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-10 sm:py-20">
+      <div className="h-7 w-48 bg-[#151a24] rounded-full animate-pulse mb-8" />
       {tiles ? <SkeletonTiles count={count} /> : <SkeletonRow count={count} />}
     </section>
   );
@@ -402,7 +402,7 @@ function CircularQuickLinks({ categories }) {
 
   return (
     <ScrollReveal>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-14">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-6 sm:py-14">
         <div className="flex gap-4 sm:gap-8 overflow-x-auto scrollbar-hide pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
           {categories.map((cat, i) => (
             <motion.div
@@ -417,15 +417,15 @@ function CircularQuickLinks({ categories }) {
                 <motion.div
                   whileHover={{ scale: 1.08, y: -3 }}
                   transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden ring-1 ring-stone group-hover:ring-verdant shadow-sm group-hover:shadow-lg transition-all duration-300 bg-stone"
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden ring-1 ring-white/10 group-hover:ring-cyan-400 shadow-[0_8px_30px_rgba(0,0,0,.18)] group-hover:shadow-[0_18px_55px_rgba(0,0,0,.35)] transition-all duration-300 bg-[#151a24]"
                 >
                   {cat.image ? (
                     <img src={cat.image} alt={cat.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center font-display italic text-ink/30">{cat.name.charAt(0)}</div>
+                    <div className="w-full h-full flex items-center justify-center font-sans italic text-white/30">{cat.name.charAt(0)}</div>
                   )}
                 </motion.div>
-                <span className="text-xs text-ink/70 group-hover:text-verdant transition-colors text-center truncate w-full">{cat.name}</span>
+                <span className="text-xs text-white/70 group-hover:text-cyan-400 transition-colors text-center truncate w-full">{cat.name}</span>
               </Link>
             </motion.div>
           ))}
@@ -445,11 +445,11 @@ function CircularQuickLinks({ categories }) {
                   <motion.div
                     whileHover={{ scale: 1.08, y: -3 }}
                     transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                    className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center text-paper shadow-sm group-hover:shadow-lg transition-shadow duration-300 ${c.tone}`}
+                    className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center text-white shadow-[0_8px_30px_rgba(0,0,0,.18)] group-hover:shadow-[0_18px_55px_rgba(0,0,0,.35)] transition-shadow duration-300 ${c.tone}`}
                   >
                     <Icon size={26} strokeWidth={1.5} />
                   </motion.div>
-                  <span className="text-xs text-ink/70 group-hover:text-verdant transition-colors text-center truncate w-full">{c.label}</span>
+                  <span className="text-xs text-white/70 group-hover:text-cyan-400 transition-colors text-center truncate w-full">{c.label}</span>
                 </Link>
               </motion.div>
             );
@@ -489,23 +489,23 @@ function CountUp({ target, suffix = '', duration = 1.4 }) {
 function StatsStrip({ stats }) {
   return (
     <ScrollReveal>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-10 sm:py-20">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 text-center">
           <div>
-            <p className="font-display text-2xl sm:text-4xl text-verdant"><CountUp target={stats.products} suffix="+" /></p>
-            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-ink/40 mt-1.5 sm:mt-2">Products in stock</p>
+            <p className="font-sans text-2xl sm:text-4xl text-cyan-400"><CountUp target={stats.products} suffix="+" /></p>
+            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-white/40 mt-1.5 sm:mt-2">Products in stock</p>
           </div>
           <div>
-            <p className="font-display text-2xl sm:text-4xl text-verdant"><CountUp target={stats.categories} /></p>
-            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-ink/40 mt-1.5 sm:mt-2">Categories</p>
+            <p className="font-sans text-2xl sm:text-4xl text-cyan-400"><CountUp target={stats.categories} /></p>
+            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-white/40 mt-1.5 sm:mt-2">Categories</p>
           </div>
           <div>
-            <p className="font-display text-2xl sm:text-4xl text-verdant"><CountUp target={stats.brands} /></p>
-            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-ink/40 mt-1.5 sm:mt-2">Brands</p>
+            <p className="font-sans text-2xl sm:text-4xl text-cyan-400"><CountUp target={stats.brands} /></p>
+            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-white/40 mt-1.5 sm:mt-2">Brands</p>
           </div>
           <div>
-            <p className="font-display text-2xl sm:text-4xl text-verdant">{stats.avgRating > 0 ? stats.avgRating.toFixed(1) : '—'}★</p>
-            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-ink/40 mt-1.5 sm:mt-2">Avg. rating</p>
+            <p className="font-sans text-2xl sm:text-4xl text-cyan-400">{stats.avgRating > 0 ? stats.avgRating.toFixed(1) : '—'}★</p>
+            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-white/40 mt-1.5 sm:mt-2">Avg. rating</p>
           </div>
         </div>
       </section>
@@ -517,20 +517,20 @@ function ProductRow({ title, subtitle, products, viewAllTo = '/catalog', rightSl
   if (products.length === 0) return null;
   return (
     <ScrollReveal>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-10 sm:py-20">
         <div className="flex items-end justify-between mb-5 sm:mb-8 gap-4 flex-wrap">
           <div>
-            <h2 className="font-display text-xl sm:text-3xl">{title}</h2>
-            {subtitle && <p className="text-xs sm:text-sm text-ink/50 mt-1 sm:mt-1.5">{subtitle}</p>}
+            <h2 className="font-sans text-xl sm:text-3xl">{title}</h2>
+            {subtitle && <p className="text-xs sm:text-sm text-white/50 mt-1 sm:mt-1.5">{subtitle}</p>}
           </div>
           <div className="flex items-center gap-4">
             {rightSlot}
-            <Link to={viewAllTo} className="text-[10px] sm:text-xs uppercase tracking-widest text-verdant hover:text-verdant-light transition-colors whitespace-nowrap">
+            <Link to={viewAllTo} className="text-[10px] sm:text-xs uppercase tracking-widest text-cyan-400 hover:text-cyan-400-light transition-colors whitespace-nowrap">
               View all
             </Link>
           </div>
         </div>
-        <div className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory">
+        <div className="flex gap-5 sm:gap-7 overflow-x-auto scrollbar-hide pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory">
           {products.map((product, i) => (
             <motion.div
               key={product.id}
@@ -538,7 +538,7 @@ function ProductRow({ title, subtitle, products, viewAllTo = '/catalog', rightSl
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="w-36 sm:w-56 flex-shrink-0 snap-start"
+              className="w-48 sm:w-64 flex-shrink-0 snap-start"
             >
               <ProductCard product={product} />
             </motion.div>
@@ -572,10 +572,10 @@ function BrandMarquee({ brands }) {
           <Link
             key={`${brand}-${i}`}
             to={`/catalog?brand=${encodeURIComponent(brand)}`}
-            className="group flex flex-col items-center justify-center gap-2 sm:gap-3 w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-md border border-stone bg-white/50 hover:border-verdant hover:shadow-lg transition-all duration-300"
+            className="group flex flex-col items-center justify-center gap-2 sm:gap-3 w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-2xl border border-white/10 bg-white/[0.035] hover:border-cyan-400 hover:shadow-[0_18px_55px_rgba(0,0,0,.35)] transition-all duration-300"
           >
-            <span className="font-display text-lg sm:text-2xl italic text-ink/70 group-hover:text-verdant transition-colors">{brand.charAt(0)}</span>
-            <span className="text-[10px] sm:text-xs text-ink/60 group-hover:text-ink transition-colors text-center px-2 truncate w-full">{brand}</span>
+            <span className="font-sans text-lg sm:text-2xl italic text-white/70 group-hover:text-cyan-400 transition-colors">{brand.charAt(0)}</span>
+            <span className="text-[10px] sm:text-xs text-white/60 group-hover:text-white transition-colors text-center px-2 truncate w-full">{brand}</span>
           </Link>
         ))}
       </div>
@@ -597,18 +597,18 @@ function NewsletterSection() {
 
   return (
     <ScrollReveal>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-        <div className="rounded-lg bg-gradient-to-br from-ink to-ink-light text-paper overflow-hidden relative">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-4">
+        <div className="rounded-3xl bg-gradient-to-br from-ink to-ink-light text-white overflow-hidden relative">
           <motion.div
             aria-hidden="true"
-            className="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-verdant/20 blur-3xl"
+            className="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-cyan-500/20 blur-3xl"
             animate={{ scale: [1, 1.15, 1] }}
             transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
           />
-          <div className="relative p-6 sm:p-14 text-center max-w-xl mx-auto">
-            <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-verdant-light">Stay in the loop</span>
-            <h2 className="font-display text-2xl sm:text-4xl mt-2 sm:mt-3">Get first access to new drops.</h2>
-            <p className="text-paper/60 mt-2 sm:mt-3 text-xs sm:text-sm">Restocks, price drops, and offers — straight to your inbox, no spam.</p>
+          <div className="relative p-8 sm:p-16 text-center max-w-2xl mx-auto">
+            <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-cyan-400-light">Stay in the loop</span>
+            <h2 className="font-sans text-2xl sm:text-4xl mt-2 sm:mt-3">Get first access to new drops.</h2>
+            <p className="text-white/60 mt-2 sm:mt-3 text-xs sm:text-sm">Restocks, price drops, and offers — straight to your inbox, no spam.</p>
             <form onSubmit={handleSubmit} className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-center gap-3 justify-center">
               <input
                 type="email"
@@ -616,13 +616,13 @@ function NewsletterSection() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full sm:w-72 px-5 py-2.5 sm:py-3 rounded-full bg-paper/10 border border-paper/20 placeholder:text-paper/40 text-paper text-sm focus:outline-none focus:border-verdant-light transition-colors"
+                className="w-full sm:w-72 px-5 py-2.5 sm:py-3 rounded-full bg-white/[0.07] border border-white/15 placeholder:text-white/40 text-white text-sm focus:outline-none focus:border-verdant-light transition-colors"
               />
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 type="submit"
-                className="px-7 py-2.5 sm:py-3 bg-verdant hover:bg-verdant-light transition-colors rounded-full text-sm font-sans uppercase tracking-widest text-paper whitespace-nowrap w-full sm:w-auto"
+                className="px-7 py-2.5 sm:py-3 bg-cyan-500 hover:bg-cyan-500-light transition-colors rounded-full text-sm font-sans uppercase tracking-widest text-white whitespace-nowrap w-full sm:w-auto"
               >
                 {submitted ? 'Subscribed ✓' : 'Subscribe'}
               </motion.button>
@@ -728,11 +728,13 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-paper relative overflow-hidden">
+    <div className="bg-[#07090d] text-white relative overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-30"
+        style={{backgroundImage:'linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px)', backgroundSize:'48px 48px'}} />
       <HeroCarousel />
 
       {loading ? (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-14">
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-6 sm:py-14">
           <SkeletonCircles />
         </section>
       ) : (
@@ -745,9 +747,9 @@ export default function Home() {
         <SectionSkeleton tiles count={4} />
       ) : categories.length > 0 && (
         <ScrollReveal>
-          <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16 relative">
+          <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-8 sm:py-16 relative">
             <div className="flex items-center justify-between mb-5 sm:mb-8">
-              <h2 className="font-display text-xl sm:text-3xl">Shop by category</h2>
+              <h2 className="font-sans text-xl sm:text-3xl">Shop by category</h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6">
               {categories.map((cat, i) => (
@@ -762,7 +764,7 @@ export default function Home() {
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="aspect-square rounded-md bg-stone overflow-hidden relative shadow-sm group-hover:shadow-lg transition-shadow duration-300"
+                      className="aspect-[1/1.08] rounded-3xl bg-[#151a24] overflow-hidden relative shadow-[0_8px_30px_rgba(0,0,0,.18)] group-hover:shadow-[0_18px_55px_rgba(0,0,0,.35)] transition-shadow duration-300"
                     >
                       {cat.image ? (
                         <img
@@ -771,14 +773,14 @@ export default function Home() {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-ink/20 font-display italic">
+                        <div className="w-full h-full flex items-center justify-center text-white/20 font-sans italic">
                           {cat.name}
                         </div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-2.5 sm:p-4">
-                        <p className="font-display text-paper text-sm sm:text-lg leading-tight">{cat.name}</p>
-                        <p className="text-paper/60 text-[10px] sm:text-xs font-mono mt-0.5">{cat.count} item{cat.count !== 1 ? 's' : ''}</p>
+                        <p className="font-sans text-white text-sm sm:text-lg leading-tight">{cat.name}</p>
+                        <p className="text-white/60 text-[10px] sm:text-xs font-mono mt-0.5">{cat.count} item{cat.count !== 1 ? 's' : ''}</p>
                       </div>
                     </motion.div>
                   </Link>
@@ -791,8 +793,8 @@ export default function Home() {
 
       {!loading && priceBuckets.length > 0 && (
         <ScrollReveal>
-          <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
-            <h2 className="font-display text-xl sm:text-3xl mb-5 sm:mb-8">Shop by price</h2>
+          <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-10 sm:py-20">
+            <h2 className="font-sans text-xl sm:text-3xl mb-5 sm:mb-8">Shop by price</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
               {priceBuckets.map((b, i) => (
                 <motion.div
@@ -809,7 +811,7 @@ export default function Home() {
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="aspect-square rounded-md overflow-hidden relative bg-stone shadow-sm group-hover:shadow-lg transition-all duration-300"
+                      className="aspect-[1/1.08] rounded-3xl overflow-hidden relative bg-[#151a24] shadow-[0_8px_30px_rgba(0,0,0,.18)] group-hover:shadow-[0_18px_55px_rgba(0,0,0,.35)] transition-all duration-300"
                     >
                       {b.image ? (
                         <img
@@ -822,8 +824,8 @@ export default function Home() {
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent" />
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-center gap-1.5 p-2">
-                        <span className="font-display text-sm sm:text-xl text-paper px-2">{b.label}</span>
-                        <span className="text-[10px] sm:text-xs font-mono text-paper/70">{b.count} item{b.count !== 1 ? 's' : ''}</span>
+                        <span className="font-sans text-sm sm:text-xl text-white px-2">{b.label}</span>
+                        <span className="text-[10px] sm:text-xs font-mono text-white/70">{b.count} item{b.count !== 1 ? 's' : ''}</span>
                       </div>
                     </motion.div>
                   </Link>
@@ -852,7 +854,7 @@ export default function Home() {
           subtitle="Our biggest discounts, while stock lasts"
           products={limitedOffers}
           rightSlot={
-            <span className="flex items-center gap-1.5 font-mono text-[10px] sm:text-xs text-ember bg-ember/10 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full">
+            <span className="flex items-center gap-1.5 font-mono text-[10px] sm:text-xs text-fuchsia-400 bg-fuchsia-500/10 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full">
               <Clock size={12} strokeWidth={1.75} />
               {countdown.hours}:{countdown.minutes}:{countdown.seconds}
             </span>
@@ -861,29 +863,29 @@ export default function Home() {
       )}
 
       <ScrollReveal>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-          <div className="rounded-lg bg-ink text-paper overflow-hidden relative">
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-4">
+          <div className="rounded-3xl bg-[#0b1018] text-white overflow-hidden relative">
             <motion.div
               aria-hidden="true"
-              className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-verdant/20 blur-3xl"
+              className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-cyan-500/20 blur-3xl"
               animate={{ scale: [1, 1.15, 1] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             />
-            <div className="relative grid sm:grid-cols-2 gap-5 sm:gap-6 p-6 sm:p-12 items-center">
+            <div className="relative grid sm:grid-cols-[1fr_auto] gap-8 sm:gap-12 p-8 sm:p-14 items-center">
               <div>
-                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-verdant-light">First order?</span>
-                <h2 className="font-display text-2xl sm:text-4xl mt-2">Get 10% off, on us.</h2>
-                <p className="text-paper/60 mt-2 sm:mt-3 text-xs sm:text-sm max-w-sm">
+                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-cyan-400-light">First order?</span>
+                <h2 className="font-sans text-2xl sm:text-4xl mt-2">Get 10% off, on us.</h2>
+                <p className="text-white/60 mt-2 sm:mt-3 text-xs sm:text-sm max-w-sm">
                   Use the code at checkout — applied instantly, no minimum order.
                 </p>
                 <div className="flex items-center gap-3 mt-4 sm:mt-6">
-                  <div className="flex items-center gap-3 border border-paper/20 rounded-full pl-4 sm:pl-5 pr-2 py-1.5 sm:py-2">
+                  <div className="flex items-center gap-3 border border-white/15 rounded-full pl-4 sm:pl-5 pr-2 py-1.5 sm:py-2">
                     <span className="font-mono text-sm sm:text-lg tracking-widest">WELCOME10</span>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={handleCopyCode}
-                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-verdant hover:bg-verdant-light transition-colors flex items-center justify-center flex-shrink-0"
+                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-cyan-500 hover:bg-cyan-500-light transition-colors flex items-center justify-center flex-shrink-0"
                       aria-label="Copy promo code"
                     >
                       {copied ? <Check size={14} strokeWidth={2.5} /> : <Copy size={13} strokeWidth={1.75} />}
@@ -895,7 +897,7 @@ export default function Home() {
                 to="/catalog"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="sm:justify-self-end inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-paper text-ink rounded-full text-xs sm:text-sm font-sans uppercase tracking-widest w-fit"
+                className="sm:justify-self-end inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-paper text-white rounded-full text-xs sm:text-sm font-sans uppercase tracking-widest w-fit"
               >
                 Start shopping
               </MotionLink>
@@ -906,14 +908,14 @@ export default function Home() {
 
       {!loading && collections.length > 0 && (
         <ScrollReveal>
-          <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
-            <h2 className="font-display text-xl sm:text-3xl mb-6 sm:mb-10">Featured collections</h2>
+          <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-10 sm:py-20">
+            <h2 className="font-sans text-xl sm:text-3xl mb-6 sm:mb-10">Featured collections</h2>
             <div className="space-y-8 sm:space-y-12">
               {collections.map((c) => (
                 <div key={c.id}>
                   <div className="flex items-baseline justify-between mb-4 sm:mb-5 gap-4 flex-wrap">
-                    <h3 className="font-display text-lg sm:text-xl">{c.title}</h3>
-                    <p className="text-[10px] sm:text-xs text-ink/40">{c.subtitle}</p>
+                    <h3 className="font-sans text-lg sm:text-xl">{c.title}</h3>
+                    <p className="text-[10px] sm:text-xs text-white/40">{c.subtitle}</p>
                   </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-6 sm:gap-y-10">
                     {c.products.map((product, i) => (
@@ -932,7 +934,7 @@ export default function Home() {
       {!loading && brands.length >= 3 && (
         <ScrollReveal>
           <section className="max-w-7xl mx-auto py-8 sm:py-16 relative">
-            <h2 className="font-display text-xl sm:text-3xl mb-5 sm:mb-8 max-w-7xl mx-auto px-4 sm:px-6">Featured brands</h2>
+            <h2 className="font-sans text-xl sm:text-3xl mb-5 sm:mb-8 max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10">Featured brands</h2>
             <BrandMarquee brands={brands} />
           </section>
         </ScrollReveal>
@@ -943,19 +945,19 @@ export default function Home() {
       )}
 
       <ScrollReveal>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-20">
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-10 sm:py-20">
           <div className="grid sm:grid-cols-2 gap-8 sm:gap-16">
             <ScrollReveal direction="left">
-              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-ember">Live inventory</span>
-              <h2 className="font-display text-2xl sm:text-4xl mt-2 sm:mt-3">Stock levels, straight from the source.</h2>
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-ink/60">
+              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-fuchsia-400">Live inventory</span>
+              <h2 className="font-sans text-2xl sm:text-4xl mt-2 sm:mt-3">Stock levels, straight from the source.</h2>
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-white/60">
                 No more ordering something that's already sold out. Every listing reflects real, current stock.
               </p>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
-              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-verdant">Fast checkout</span>
-              <h2 className="font-display text-2xl sm:text-4xl mt-2 sm:mt-3">From cart to confirmed in seconds.</h2>
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-ink/60">
+              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-cyan-400">Fast checkout</span>
+              <h2 className="font-sans text-2xl sm:text-4xl mt-2 sm:mt-3">From cart to confirmed in seconds.</h2>
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-white/60">
                 A streamlined checkout built for speed, with real-time totals as you shop.
               </p>
             </ScrollReveal>
@@ -964,8 +966,8 @@ export default function Home() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16 relative">
-          <h2 className="font-display text-xl sm:text-3xl mb-5 sm:mb-8">What customers are saying</h2>
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-8 sm:py-16 relative">
+          <h2 className="font-sans text-xl sm:text-3xl mb-5 sm:mb-8">What customers are saying</h2>
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
             {TESTIMONIALS.map((t, i) => (
               <motion.div
@@ -974,16 +976,16 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="bg-white/60 border border-stone rounded-md p-5 sm:p-6"
+                className="bg-white/[0.045] border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl hover:bg-white/[0.07] transition-colors"
               >
                 <div className="flex gap-0.5 mb-3">
                   {Array.from({ length: 5 }).map((_, s) => (
-                    <Star key={s} size={13} strokeWidth={0} className={s < t.rating ? 'fill-verdant text-verdant' : 'fill-stone text-stone'} />
+                    <Star key={s} size={13} strokeWidth={0} className={s < t.rating ? 'fill-verdant text-cyan-400' : 'fill-stone text-stone'} />
                   ))}
                 </div>
-                <p className="text-sm text-ink/70 leading-relaxed">"{t.quote}"</p>
-                <p className="font-display text-sm mt-4">{t.name}</p>
-                <p className="text-xs text-ink/40 font-mono">{t.role}</p>
+                <p className="text-sm text-white/70 leading-relaxed">"{t.quote}"</p>
+                <p className="font-sans text-sm mt-4">{t.name}</p>
+                <p className="text-xs text-white/40 font-mono">{t.role}</p>
               </motion.div>
             ))}
           </div>
@@ -991,23 +993,23 @@ export default function Home() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="border-y border-stone bg-white/40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
+        <section className="border-y border-white/10 bg-white/[0.025]">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-6 sm:py-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
             <div className="flex flex-col items-center gap-1.5 sm:gap-2">
-              <ShieldCheck size={18} strokeWidth={1.5} className="text-verdant" />
-              <span className="text-[10px] sm:text-xs text-ink/60">Secured by Razorpay</span>
+              <ShieldCheck size={18} strokeWidth={1.5} className="text-cyan-400" />
+              <span className="text-[10px] sm:text-xs text-white/60">Secured by Razorpay</span>
             </div>
             <div className="flex flex-col items-center gap-1.5 sm:gap-2">
-              <RotateCcw size={18} strokeWidth={1.5} className="text-verdant" />
-              <span className="text-[10px] sm:text-xs text-ink/60">7-day returns</span>
+              <RotateCcw size={18} strokeWidth={1.5} className="text-cyan-400" />
+              <span className="text-[10px] sm:text-xs text-white/60">7-day returns</span>
             </div>
             <div className="flex flex-col items-center gap-1.5 sm:gap-2">
-              <Truck size={18} strokeWidth={1.5} className="text-verdant" />
-              <span className="text-[10px] sm:text-xs text-ink/60">Pan-India delivery</span>
+              <Truck size={18} strokeWidth={1.5} className="text-cyan-400" />
+              <span className="text-[10px] sm:text-xs text-white/60">Pan-India delivery</span>
             </div>
             <div className="flex flex-col items-center gap-1.5 sm:gap-2">
-              <PackageCheck size={18} strokeWidth={1.5} className="text-verdant" />
-              <span className="text-[10px] sm:text-xs text-ink/60">Real-time stock</span>
+              <PackageCheck size={18} strokeWidth={1.5} className="text-cyan-400" />
+              <span className="text-[10px] sm:text-xs text-white/60">Real-time stock</span>
             </div>
           </div>
         </section>
@@ -1016,14 +1018,14 @@ export default function Home() {
       <NewsletterSection />
 
       <ScrollReveal direction="zoom">
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-24 text-center relative">
-          <h2 className="font-display text-3xl sm:text-5xl">Ready to see what's on the shelf?</h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-ink/60">Browse the full catalog below.</p>
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 py-14 sm:py-24 text-center relative">
+          <h2 className="font-sans text-3xl sm:text-5xl">Ready to see what's on the shelf?</h2>
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-white/60">Browse the full catalog below.</p>
           <MotionLink
             to="/catalog"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-block mt-6 sm:mt-8 px-7 sm:px-8 py-2.5 sm:py-3 bg-verdant hover:bg-verdant-light transition-colors rounded-full text-xs sm:text-sm font-sans uppercase tracking-widest text-paper"
+            className="inline-block mt-7 sm:mt-9 px-8 sm:px-10 py-3.5 sm:py-4 bg-cyan-500 hover:bg-cyan-500-light transition-colors rounded-full text-xs sm:text-sm font-sans uppercase tracking-widest text-white"
           >
             Shop the catalog
           </MotionLink>
