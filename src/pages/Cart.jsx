@@ -46,7 +46,7 @@ export default function Cart() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white/60 border border-stone rounded-2xl p-4"
+                className="bg-white/60 border border-stone rounded-md p-4"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-stone overflow-hidden flex-shrink-0">
@@ -109,7 +109,7 @@ export default function Cart() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="h-fit bg-white/60 border border-stone rounded-2xl p-6 md:sticky md:top-28"
+          className="h-fit bg-white/60 border border-stone rounded-md p-6 md:sticky md:top-28"
         >
           <h2 className="font-display text-xl mb-4">Order summary</h2>
 

@@ -51,7 +51,7 @@ export default function ImageGallery({ images, alt, hasDiscount, discountPercent
           onMouseEnter={() => setZoomVisible(true)}
           onMouseLeave={() => setZoomVisible(false)}
           onMouseMove={handleMouseMove}
-          className="aspect-square rounded-2xl bg-stone overflow-hidden relative cursor-crosshair"
+          className="aspect-square rounded-md bg-stone overflow-hidden relative cursor-crosshair"
         >
           {hasDiscount && (
             <span className="absolute top-4 left-4 z-10 bg-ember text-paper text-xs font-mono px-3 py-1.5 rounded-full">
@@ -88,7 +88,7 @@ export default function ImageGallery({ images, alt, hasDiscount, discountPercent
         {/* Magnified panel beside the main image — desktop only */}
         {zoomVisible && activeImage && (
           <div
-            className="hidden md:block absolute top-0 left-full ml-4 w-full aspect-square rounded-2xl border border-stone shadow-xl overflow-hidden z-30 bg-stone"
+            className="hidden md:block absolute top-0 left-full ml-4 w-full aspect-square rounded-md border border-stone shadow-xl overflow-hidden z-30 bg-stone"
             style={{
               backgroundImage: `url(${activeImage})`,
               backgroundSize: `${ZOOM_SCALE}%`,

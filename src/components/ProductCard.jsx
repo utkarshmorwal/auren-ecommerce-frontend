@@ -109,7 +109,7 @@ export default function ProductCard({ product }) {
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         className="group block"
       >
-        <div className="aspect-square rounded-2xl bg-stone overflow-hidden relative shadow-sm group-hover:shadow-xl transition-shadow duration-300">
+        <div className="aspect-square rounded-md bg-stone overflow-hidden relative shadow-sm group-hover:shadow-xl transition-shadow duration-300">
 
           {/* Badges */}
           <div className="absolute top-3 left-3 z-10 flex flex-col items-start gap-1.5">
@@ -330,7 +330,7 @@ export default function ProductCard({ product }) {
             >
               <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-paper rounded-2xl w-full max-w-2xl grid sm:grid-cols-2 gap-6 p-5 sm:p-6 relative max-h-[90vh] overflow-y-auto"
+                className="bg-paper rounded-md w-full max-w-2xl grid sm:grid-cols-2 gap-6 p-5 sm:p-6 relative max-h-[90vh] overflow-y-auto"
               >
                 <button
                   onClick={closeQuickView}

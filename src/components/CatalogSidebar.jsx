@@ -60,7 +60,7 @@ function PriceRangeSlider({ min, max, value, onChange }) {
           height: 16px;
           border-radius: 9999px;
           background: #ffffff;
-          border: 2px solid #0f766e;
+          border: 2px solid #4338ca;
           cursor: pointer;
           box-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
@@ -70,7 +70,7 @@ function PriceRangeSlider({ min, max, value, onChange }) {
           height: 16px;
           border-radius: 9999px;
           background: #ffffff;
-          border: 2px solid #0f766e;
+          border: 2px solid #4338ca;
           cursor: pointer;
           box-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }

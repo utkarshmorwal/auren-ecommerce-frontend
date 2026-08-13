@@ -129,7 +129,7 @@ export default function ReviewSection({ productId, onReviewAdded }) {
             onSubmit={handleSubmit}
             className="overflow-hidden mb-8"
           >
-            <div className="bg-white/60 border border-stone rounded-2xl p-6">
+            <div className="bg-white/60 border border-stone rounded-md p-6">
               <label className="block text-xs uppercase tracking-widest text-ink/50 mb-3">Your rating</label>
               <div className="flex gap-1 mb-4">
                 {[1, 2, 3, 4, 5].map((n) => (

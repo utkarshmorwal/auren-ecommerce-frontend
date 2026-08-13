@@ -104,7 +104,7 @@ export default function AdminOrders() {
                   duration: 0.3,
                   delay: i * 0.03,
                 }}
-                className="bg-white/60 border border-stone rounded-2xl p-5"
+                className="bg-white/60 border border-stone rounded-md p-5"
               >
                 {/* ORDER HEADER */}
                 <button

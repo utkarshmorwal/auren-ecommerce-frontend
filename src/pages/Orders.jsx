@@ -86,7 +86,7 @@ const error = isError ? 'Could not load your orders.' : '';
 
       {/* No Orders */}
       {!loading && !error && orders.length === 0 && (
-        <div className="mt-8 sm:mt-10 rounded-2xl border border-stone bg-white/60 p-8 sm:p-12 text-center">
+        <div className="mt-8 sm:mt-10 rounded-md border border-stone bg-white/60 p-8 sm:p-12 text-center">
 
           <Package
             size={34}
@@ -121,7 +121,7 @@ const error = isError ? 'Could not load your orders.' : '';
               className="
                 bg-white/70
                 border border-stone
-                rounded-2xl
+                rounded-md
                 overflow-hidden
               "
             >

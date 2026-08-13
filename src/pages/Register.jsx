@@ -103,7 +103,7 @@ export default function Register() {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
               onSubmit={handleSendOtp}
-              className="bg-white/60 border border-stone rounded-2xl p-8 space-y-5"
+              className="bg-white/60 border border-stone rounded-md p-8 space-y-5"
             >
               {error && (
                 <motion.div
@@ -175,7 +175,7 @@ export default function Register() {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
               onSubmit={handleVerifyAndRegister}
-              className="bg-white/60 border border-stone rounded-2xl p-8 space-y-5"
+              className="bg-white/60 border border-stone rounded-md p-8 space-y-5"
             >
               {error && (
                 <motion.div

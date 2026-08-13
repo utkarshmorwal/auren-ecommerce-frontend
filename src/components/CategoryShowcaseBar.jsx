@@ -48,7 +48,7 @@ export default function CategoryShowcaseBar({ categories, selectedCategory, onSe
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="absolute left-1/2 -translate-x-1/2 top-full w-80 pt-3 z-50"
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-stone relative">
+            <div className="aspect-[4/3] rounded-md overflow-hidden shadow-2xl ring-1 ring-stone relative">
               <img src={preview.image} alt={preview.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5">

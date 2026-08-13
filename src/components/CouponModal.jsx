@@ -82,7 +82,7 @@ export default function CouponModal({ open, onClose, subtotal, appliedCode, onAp
           exit={{ opacity: 0, scale: 0.95, y: 12 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           onClick={(e) => e.stopPropagation()}
-          className="bg-paper rounded-2xl w-full max-w-md max-h-[85vh] flex flex-col overflow-hidden"
+          className="bg-paper rounded-md w-full max-w-md max-h-[85vh] flex flex-col overflow-hidden"
         >
           <div className="flex items-center justify-between px-6 py-5 border-b border-stone flex-shrink-0">
             <h2 className="font-display text-xl">Apply coupon</h2>

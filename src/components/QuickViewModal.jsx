@@ -47,7 +47,7 @@ export default function QuickViewModal({ product, onClose }) {
           exit={{ opacity: 0, scale: 0.95, y: 12 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           onClick={(e) => e.stopPropagation()}
-          className="bg-paper rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto relative"
+          className="bg-paper rounded-md w-full max-w-2xl max-h-[85vh] overflow-y-auto relative"
         >
           <button
             onClick={onClose}

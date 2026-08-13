@@ -95,7 +95,7 @@ export default function Checkout() {
           email: user.email,
           contact: form.shippingPhone,
         },
-        theme: { color: '#0f766e' },
+        theme: { color: '#4338ca' },
         config: {
           display: {
             blocks: {
@@ -216,7 +216,7 @@ export default function Checkout() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-white/60 border border-stone rounded-2xl p-6"
+            className="bg-white/60 border border-stone rounded-md p-6"
           >
             <div className="flex items-center gap-2 mb-5">
               <MapPin size={16} strokeWidth={1.75} className="text-verdant" />
@@ -281,7 +281,7 @@ export default function Checkout() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="bg-white/60 border border-stone rounded-2xl p-6"
+            className="bg-white/60 border border-stone rounded-md p-6"
           >
             <div className="flex items-center gap-2 mb-5">
               <ShoppingBag size={16} strokeWidth={1.75} className="text-verdant" />
@@ -314,7 +314,7 @@ export default function Checkout() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.15 }}
-            className="flex items-center gap-3 bg-verdant/5 border border-verdant/15 rounded-2xl px-5 py-4"
+            className="flex items-center gap-3 bg-verdant/5 border border-verdant/15 rounded-md px-5 py-4"
           >
             <Truck size={18} strokeWidth={1.75} className="text-verdant flex-shrink-0" />
             <p className="text-sm text-ink/70 min-w-0">Estimated delivery in <span className="font-mono">5–7 days</span>, tracked from dispatch.</p>
@@ -325,7 +325,7 @@ export default function Checkout() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="h-fit bg-white/60 border border-stone rounded-2xl p-6 md:sticky md:top-28"
+          className="h-fit bg-white/60 border border-stone rounded-md p-6 md:sticky md:top-28"
         >
           <h2 className="font-display text-xl mb-5">Order summary</h2>
 

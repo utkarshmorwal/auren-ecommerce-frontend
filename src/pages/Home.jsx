@@ -356,7 +356,7 @@ function SkeletonRow({ count = 4 }) {
     <div className="flex gap-6 overflow-hidden">
       {Array.from({ length: count }).map((_, i) => (
         <div key={i} className="w-44 sm:w-56 flex-shrink-0 animate-pulse">
-          <div className="aspect-square rounded-2xl bg-stone" />
+          <div className="aspect-square rounded-md bg-stone" />
           <div className="mt-4 h-3.5 rounded-full bg-stone w-4/5" />
           <div className="mt-2.5 h-3.5 rounded-full bg-stone w-2/5" />
         </div>
@@ -369,7 +369,7 @@ function SkeletonTiles({ count = 4 }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
       {Array.from({ length: count }).map((_, i) => (
-        <div key={i} className="aspect-square rounded-2xl bg-stone animate-pulse" />
+        <div key={i} className="aspect-square rounded-md bg-stone animate-pulse" />
       ))}
     </div>
   );
@@ -572,7 +572,7 @@ function BrandMarquee({ brands }) {
           <Link
             key={`${brand}-${i}`}
             to={`/catalog?brand=${encodeURIComponent(brand)}`}
-            className="group flex flex-col items-center justify-center gap-2 sm:gap-3 w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-2xl border border-stone bg-white/50 hover:border-verdant hover:shadow-lg transition-all duration-300"
+            className="group flex flex-col items-center justify-center gap-2 sm:gap-3 w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-md border border-stone bg-white/50 hover:border-verdant hover:shadow-lg transition-all duration-300"
           >
             <span className="font-display text-lg sm:text-2xl italic text-ink/70 group-hover:text-verdant transition-colors">{brand.charAt(0)}</span>
             <span className="text-[10px] sm:text-xs text-ink/60 group-hover:text-ink transition-colors text-center px-2 truncate w-full">{brand}</span>
@@ -598,7 +598,7 @@ function NewsletterSection() {
   return (
     <ScrollReveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-        <div className="rounded-3xl bg-gradient-to-br from-ink to-ink-light text-paper overflow-hidden relative">
+        <div className="rounded-lg bg-gradient-to-br from-ink to-ink-light text-paper overflow-hidden relative">
           <motion.div
             aria-hidden="true"
             className="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-verdant/20 blur-3xl"
@@ -762,7 +762,7 @@ export default function Home() {
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="aspect-square rounded-2xl bg-stone overflow-hidden relative shadow-sm group-hover:shadow-lg transition-shadow duration-300"
+                      className="aspect-square rounded-md bg-stone overflow-hidden relative shadow-sm group-hover:shadow-lg transition-shadow duration-300"
                     >
                       {cat.image ? (
                         <img
@@ -809,7 +809,7 @@ export default function Home() {
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="aspect-square rounded-2xl overflow-hidden relative bg-stone shadow-sm group-hover:shadow-lg transition-all duration-300"
+                      className="aspect-square rounded-md overflow-hidden relative bg-stone shadow-sm group-hover:shadow-lg transition-all duration-300"
                     >
                       {b.image ? (
                         <img
@@ -862,7 +862,7 @@ export default function Home() {
 
       <ScrollReveal>
         <section className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-          <div className="rounded-3xl bg-ink text-paper overflow-hidden relative">
+          <div className="rounded-lg bg-ink text-paper overflow-hidden relative">
             <motion.div
               aria-hidden="true"
               className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-verdant/20 blur-3xl"
@@ -974,7 +974,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="bg-white/60 border border-stone rounded-2xl p-5 sm:p-6"
+                className="bg-white/60 border border-stone rounded-md p-5 sm:p-6"
               >
                 <div className="flex gap-0.5 mb-3">
                   {Array.from({ length: 5 }).map((_, s) => (

@@ -81,7 +81,7 @@ const error = (productsError || ordersError) ? 'Could not load dashboard data.' 
                   duration: 0.4,
                   delay: i * 0.05,
                 }}
-                className="bg-white/60 border border-stone rounded-2xl p-5"
+                className="bg-white/60 border border-stone rounded-md p-5"
               >
                 <Icon
                   size={18}

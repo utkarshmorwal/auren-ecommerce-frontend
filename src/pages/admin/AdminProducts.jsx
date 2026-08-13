@@ -131,7 +131,7 @@ export default function AdminProducts() {
       {loading ? (
         <p className="text-ink/40 font-mono text-sm">Loading...</p>
       ) : (
-        <div className="bg-white/60 border border-stone rounded-2xl overflow-x-auto">
+        <div className="bg-white/60 border border-stone rounded-md overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-stone text-left text-xs uppercase tracking-widest text-ink/40">
@@ -210,7 +210,7 @@ export default function AdminProducts() {
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
               onClick={(e) => e.stopPropagation()}
               onSubmit={handleSubmit}
-              className="bg-paper rounded-2xl p-6 sm:p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+              className="bg-paper rounded-md p-6 sm:p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
             >
               <div className="flex items-center justify-between mb-6">
                 <h2 className="font-display text-2xl">{editingId ? 'Edit product' : 'Add product'}</h2>

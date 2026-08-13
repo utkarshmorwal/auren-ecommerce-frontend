@@ -70,7 +70,7 @@ export default function CategoryMegaMenu() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             onMouseEnter={() => handleEnter(active.name)}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[640px] max-w-[90vw] bg-paper text-ink rounded-2xl shadow-2xl border border-stone overflow-hidden z-50"
+            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[640px] max-w-[90vw] bg-paper text-ink rounded-md shadow-2xl border border-stone overflow-hidden z-50"
           >
             <div className="grid grid-cols-[180px_1fr] gap-6 p-6">
               <div className="aspect-square rounded-xl bg-stone overflow-hidden relative">

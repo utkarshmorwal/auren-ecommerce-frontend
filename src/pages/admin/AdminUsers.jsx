@@ -47,7 +47,7 @@ export default function AdminUsers() {
       {loading ? (
         <p className="text-ink/40 font-mono text-sm">Loading...</p>
       ) : (
-        <div className="bg-white/60 border border-stone rounded-2xl overflow-x-auto">
+        <div className="bg-white/60 border border-stone rounded-md overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-stone text-left text-xs uppercase tracking-widest text-ink/40">

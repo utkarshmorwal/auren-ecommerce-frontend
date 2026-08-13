@@ -292,7 +292,7 @@ const { data: fetchedProducts, isLoading: loading, isError } = useQuery({
           <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
             {Array.from({ length: 8 }).map((_, i) => (
               <div key={i} className="animate-pulse">
-                <div className="aspect-square rounded-2xl bg-stone" />
+                <div className="aspect-square rounded-md bg-stone" />
                 <div className="mt-4 space-y-2">
                   <div className="h-3 w-16 bg-stone rounded" />
                   <div className="h-5 w-3/4 bg-stone rounded" />

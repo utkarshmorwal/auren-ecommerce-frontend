@@ -48,7 +48,7 @@ export default function Login() {
           <h1 className="font-display text-4xl mt-2">Sign in to Auren</h1>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white/60 border border-stone rounded-2xl p-8 space-y-5">
+        <form onSubmit={handleSubmit} className="bg-white/60 border border-stone rounded-md p-8 space-y-5">
           {error && (
             <motion.div
               initial={{ opacity: 0, x: -6 }}

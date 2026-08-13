@@ -174,7 +174,7 @@ export default function NotificationBell() {
               duration: 0.2,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-paper border border-stone rounded-2xl shadow-2xl overflow-hidden z-50"
+            className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-paper border border-stone rounded-md shadow-2xl overflow-hidden z-50"
           >
             <div className="flex items-center justify-between px-4 py-3 border-b border-stone">
               <span className="font-display text-sm">

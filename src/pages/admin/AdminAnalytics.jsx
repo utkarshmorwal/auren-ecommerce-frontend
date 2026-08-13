@@ -8,7 +8,7 @@ import { TrendingUp, Package, DollarSign, Star, AlertTriangle } from 'lucide-rea
 import { useQuery } from '@tanstack/react-query';
 import api from '../../services/api';
 
-const COLORS = ['#0f766e', '#14b8a6', '#b8862c', '#d9a545', '#1c1a17', '#26231d'];
+const COLORS = ['#4338ca', '#6366f1', '#e11d48', '#fb7185', '#17151f', '#211e2e'];
 
 function StatCard({ icon: Icon, label, value, sub, delay = 0 }) {
   return (
@@ -16,7 +16,7 @@ function StatCard({ icon: Icon, label, value, sub, delay = 0 }) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay }}
-      className="bg-white/60 border border-stone rounded-2xl p-5"
+      className="bg-white/60 border border-stone rounded-md p-5"
     >
       <Icon size={18} strokeWidth={1.75} className="text-verdant mb-3" />
       <p className="font-mono text-2xl">{value}</p>
@@ -127,7 +127,7 @@ export default function AdminAnalytics() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="bg-white/60 border border-stone rounded-2xl p-6"
+          className="bg-white/60 border border-stone rounded-md p-6"
         >
           <h2 className="font-display text-lg mb-4">Revenue over time</h2>
           {revenueByDay.length === 0 ? (
@@ -139,7 +139,7 @@ export default function AdminAnalytics() {
                 <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#1c1a1799' }} />
                 <YAxis tick={{ fontSize: 11, fill: '#1c1a1799' }} />
                 <Tooltip contentStyle={{ borderRadius: 8, border: '1px solid #e5dcc5', fontSize: 12 }} />
-                <Line type="monotone" dataKey="total" stroke="#0f766e" strokeWidth={2} dot={{ fill: '#0f766e', r: 3 }} />
+                <Line type="monotone" dataKey="total" stroke="#4338ca" strokeWidth={2} dot={{ fill: '#4338ca', r: 3 }} />
               </LineChart>
             </ResponsiveContainer>
           )}
@@ -149,7 +149,7 @@ export default function AdminAnalytics() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.05 }}
-          className="bg-white/60 border border-stone rounded-2xl p-6"
+          className="bg-white/60 border border-stone rounded-md p-6"
         >
           <h2 className="font-display text-lg mb-4">Orders by status</h2>
           {ordersByStatus.length === 0 ? (
@@ -161,7 +161,7 @@ export default function AdminAnalytics() {
                 <XAxis dataKey="status" tick={{ fontSize: 11, fill: '#1c1a1799' }} />
                 <YAxis allowDecimals={false} tick={{ fontSize: 11, fill: '#1c1a1799' }} />
                 <Tooltip contentStyle={{ borderRadius: 8, border: '1px solid #e5dcc5', fontSize: 12 }} />
-                <Bar dataKey="count" fill="#0f766e" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="count" fill="#4338ca" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           )}
@@ -171,7 +171,7 @@ export default function AdminAnalytics() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="bg-white/60 border border-stone rounded-2xl p-6"
+          className="bg-white/60 border border-stone rounded-md p-6"
         >
           <h2 className="font-display text-lg mb-4">Top-selling products</h2>
           {topProducts.length === 0 ? (
@@ -183,7 +183,7 @@ export default function AdminAnalytics() {
                 <XAxis type="number" allowDecimals={false} tick={{ fontSize: 11, fill: '#1c1a1799' }} />
                 <YAxis type="category" dataKey="name" width={120} tick={{ fontSize: 11, fill: '#1c1a1799' }} />
                 <Tooltip contentStyle={{ borderRadius: 8, border: '1px solid #e5dcc5', fontSize: 12 }} />
-                <Bar dataKey="qty" fill="#b8862c" radius={[0, 6, 6, 0]} />
+                <Bar dataKey="qty" fill="#e11d48" radius={[0, 6, 6, 0]} />
               </BarChart>
             </ResponsiveContainer>
           )}
@@ -193,7 +193,7 @@ export default function AdminAnalytics() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.15 }}
-          className="bg-white/60 border border-stone rounded-2xl p-6"
+          className="bg-white/60 border border-stone rounded-md p-6"
         >
           <h2 className="font-display text-lg mb-4">Revenue by category</h2>
           {categoryRevenue.length === 0 ? (
@@ -219,7 +219,7 @@ export default function AdminAnalytics() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="bg-ember/5 border border-ember/20 rounded-2xl p-6"
+          className="bg-ember/5 border border-ember/20 rounded-md p-6"
         >
           <div className="flex items-center gap-2 mb-4">
             <AlertTriangle size={16} strokeWidth={1.75} className="text-ember" />
