@@ -5,7 +5,7 @@ Auren is a modern full-stack e-commerce application built with React.js and inte
 
 ## 🚀 Live Project
 
-**Live Website:** [https://auren-ecommerce-frontend.vercel.app/](https://auren-clothing-fashion.vercel.app/)
+**Live Website:** https://auren-clothing-fashion.vercel.app
 
 **Backend:** Deployed on Railway
 
